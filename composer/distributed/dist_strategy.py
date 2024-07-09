@@ -551,7 +551,7 @@ def prepare_fsdp_module(
                 backward_prefetch=backward_prefetch,
                 ignored_modules=ignored_modules,
                 param_init_fn=_param_init_fn,
-                device_id=torch.cuda.current_device(),
+                device_id=torch.device('hpu', torch.hpu.current_device()),
                 sync_module_states=sync_module_states,
                 forward_prefetch=forward_prefetch,
                 limit_all_gathers=limit_all_gathers,
